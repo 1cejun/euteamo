@@ -71,6 +71,43 @@
             border-radius: 10px;
             display: none; /* Imagem oculta inicialmente */
         }
+
+        /* Media Queries para dispositivos menores */
+        @media (max-width: 768px) {
+            .idiomas {
+                grid-template-columns: 1fr 1fr; /* Reduz para 2 colunas */
+            }
+
+            h1 {
+                font-size: 25px; /* Diminui o tamanho do título */
+            }
+
+            .idioma {
+                font-size: 14px; /* Diminui o tamanho do texto dentro dos botões */
+                padding: 15px; /* Ajusta o tamanho do padding */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .idiomas {
+                grid-template-columns: 1fr; /* Uma coluna */
+                gap: 10px; /* Menos espaço entre os itens */
+            }
+
+            h1 {
+                font-size: 22px; /* Título ainda menor */
+            }
+
+            .idioma {
+                font-size: 12px; /* Reduz o tamanho do texto */
+                padding: 10px; /* Ajusta o padding */
+            }
+
+            .container {
+                width: 90%; /* Ajusta a largura da container para caber melhor em telas pequenas */
+                padding: 20px; /* Menos padding */
+            }
+        }
     </style>
 </head>
 <body>
@@ -87,10 +124,10 @@
                 I love you (Ingles)
             </div>
             <div class="idioma" onclick="mostrarSignificado('frances')">
-                Je t\'aime (Frances)
+                Je t'aime (Frances)
             </div>
             <div class="idioma" onclick="mostrarSignificado('japones')">
-                 Aishiteru (Japones)
+                Aishiteru (Japones)
             </div>
             <div class="idioma" onclick="mostrarSignificado('italiano')">
                 Ti amo (Italiano)
@@ -104,7 +141,7 @@
             <!-- O significado será mostrado aqui -->
         </div>
 
-        <img id="imagem" class="imagem" src="" alt="Imagem do País" />
+        <img id="imagem" class="imagem" src="" alt="eriesi" />
     </div>
 
     <script>
@@ -115,27 +152,21 @@
             switch(idioma) {
                 case 'portugues':
                     significado = "No Brasil, o 'Eu te amo' e uma expressao usada para demonstrar carinho e afeto profundo entre casais, amigos e familiares.";
-    
                     break;
                 case 'ingles':
                     significado = "No ingles, 'I love you' e a forma mais comum de expressar o amor romantico, mas tambem e usado para amigos e familiares.";
-                   
                     break;
                 case 'frances':
                     significado = "O frances e conhecido por sua romantizacao da lingua. 'Je t\'aime' e uma das frases mais associadas ao amor e a paixao.";
-                    
                     break;
                 case 'japones':
                     significado = "No Japao, 'Aishiteru' e a forma mais direta de dizer 'Eu te amo'. Porem, e um termo muito profundo e raramente e dito de forma casual, especialmente fora de relacionamentos muito serios.";
-                    
                     break;
                 case 'italiano':
-                    significado = "A frase italiana 'Ti amo' e uma das expressoes mais poderosas e apaixonadas para dizer 'Eu te amo'.";
-                    
+                    significado = "A frase italiana 'Ti amo' e uma das expressões mais poderosas e apaixonadas para dizer 'Eu te amo'.";
                     break;
                 case 'alema':
                     significado = "No alemao, 'Ich liebe dich' e uma expressao usada para relacionamentos serios e e dita com bastante intensidade.";
-                    
                     break;
                 default:
                     significado = "Escolha um idioma para ver o significado.";
